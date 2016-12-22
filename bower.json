@@ -1,0 +1,16 @@
+{
+  "name": "rails_with_angular_setup",
+  "version": "0.0.1",
+  "authors": [
+    "Theeraphat Janatakat <pppangpondpp7@gmail.com>"
+  ],
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.5.9",
+    "angular-ui-router.stateHelper": "",
+    "ocLazyLoad": "",
+    "bootstrap": "",
+    "angular-bootstrap": "",
+    "materialize": ""
+  }
+}

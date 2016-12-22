@@ -1,0 +1,29 @@
+(function() {
+  'use strict';
+  var app = angular.module('app', [
+    'app.assets',
+    'oc.lazyLoad',
+    'ui.router.stateHelper',
+    'ui.bootstrap',
+    'app.main'
+  ]);
+
+  app.config(['stateHelperProvider', 'ASSETS', '$urlRouterProvider', function(stateHelperProvider, ASSETS, $urlRouterProvider) {
+    stateHelperProvider.
+      state({
+        url: '/',
+        name: 'home',
+        templateUrl: "<%= asset_path('angular/components/home/homeView.html') %>",
+        controller: 'homeCtrl as home',
+        resolve: {
+          resources: ['$ocLazyLoad', function($ocLazyLoad) {
+            return $ocLazyLoad.load([
+              ASSETS.app.home
+            ]);
+          }]
+        }
+      })
+
+    $urlRouterProvider.when("", "/");
+  }]);
+})();

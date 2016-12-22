@@ -1,0 +1,14 @@
+(function() {
+  'use strict';
+  angular.module('app.assets', []).
+  constant('ASSETS', {
+    'app': {
+      'home': {
+        name: 'app.home',
+        files: [
+          "<%= asset_path('angular/components/home/homeCtrl.js') %>"
+        ]
+      }
+    }
+  });
+})();

@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: rails_with_angular_setup_development
+  username: Pondpaun7z
+  password: 1234
+
+test:
+  <<: *default
+  database: rails_with_angular_setup_test
+  username: Pondpaun7z
+  password: 1234
+
+production:
+  <<: *default
+  database: rails_with_angular_setup_production
+  username: rails_with_angular_setup
+  password: <%= ENV['RAILS_WITH_ANGULAR_SETUP_DATABASE_PASSWORD'] %>
