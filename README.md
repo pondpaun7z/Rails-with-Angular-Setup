@@ -1,22 +1,28 @@
 # Rails with Angular Setup
 
-### technologies
+### Technologies
 - RoR
 - Angular 1.5
 
-### package managers
+### Package Managers
 - ruby gem
 - bundler gem, you can install by running `gem install bundler`
 - bower
 
-### directories
+### Directories
 - angular code: app/assets/javascripts/angular
 - bower library: vendor/assets/bower_components
 
-### how to start?
+### How to start?
 ##### prerequisite
 - rbenv and ruby
 - bower
+
+##### Rename Application
+  you can run 
+```
+rails g rename:app_to  new_name_for_applicaiton
+```
 
 ##### setup project
 - go to root directory
@@ -31,7 +37,8 @@
 ##### heroku
   since we are using bower and rails, we have to setup Heroku multiple build packs by using this command
 ```
-heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
+heroku config:add BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-nodejs
+heroku config:add BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-ruby
 ```
   and another command for auto migrate
 ```
@@ -46,3 +53,4 @@ bundle exec figaro install
   you can see the required ENV in 'config/initializer/figaro.rb'
 
   ps. please also check 'config/application_sample.yml'
+ 
