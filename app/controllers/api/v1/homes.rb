@@ -1,7 +1,6 @@
 module API  
   module V1
     class Homes < Grape::API
-      include API::Defaults
       include API::V1::Defaults
 
       resource :homes do
